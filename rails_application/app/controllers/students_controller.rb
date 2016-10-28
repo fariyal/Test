@@ -11,8 +11,12 @@ class StudentsController < ApplicationController
 	def create 
 		# binding.pry 
 		@student=Student.new(student_params) 
-		@student.save 
+
+		if @student.save 
 		redirect_to students_list_path 
+	   else
+		render 'new'
+	end
 	end 
 
 	def edit 
@@ -30,6 +34,11 @@ class StudentsController < ApplicationController
 		@student.destroy 
 		redirect_to students_list_path 
 	end 
+
+
+	def show
+ 	@student = Student.find(params[:id])
+ 	end
 
 	private 
 	def student_params 

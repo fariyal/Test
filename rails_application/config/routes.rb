@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+ 
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -15,6 +17,22 @@ get "student/:id/edit" => 'students#edit', :as => 'student_edit'
 put "student/:id/edit" => 'students#update', :as => 'student_update' 
 
 delete "student/:id" => 'students#destroy', :as => 'student_destroy'
+
+get "student/:id/show" => 'students#show', :as => 'student_show'
+
+
+
+ get 'project/index' =>'projects#index', :as =>'projects_list'
+
+ get 'projects/new' =>'projects#new', :as => 'project_new'
+
+ post "project/new" => 'projects#create', :as => 'project_create' 
+
+ get "project/:id/edit" => 'projects#edit', :as => 'project_edit' 
+ 
+ put "project/:id/edit" => 'projects#update', :as => 'project_update'
+
+
 
 
   # Example of regular route:

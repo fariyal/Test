@@ -1,0 +1,13 @@
+<table border="1">
+ <tr>
+   <th>FirstName  </th>
+   <th>LastName </th>
+   <th>Email </th>
+  </tr>
+  <tr>
+     <td><%= @student.firstname %></td>
+     <td><%= @student.lastname %></td>
+     <td><%= @student.email %></td>
+     <td><%= link_to 'Edit', student_edit_path%></td>
+     </tr>
+</table> <%= link_to 'add new student', student_create_path %>

@@ -1,0 +1,43 @@
+<h1>Projects#new</h1>
+<p>Find me in app/views/projects/new.html.erb</p>
+
+
+<%= form_for :student,url: user_new_path do |f| %>
+
+ <% if @student.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@student.errors.count, "error") %> prohibited
+       this article from being saved:
+     </h2>
+     <ul>
+       <% @student.errors.full_messages.each do |msg| %>
+         <li><%= msg %></li>
+       <% end %>
+     </ul>
+   </div>
+ <% end %>
+ <p>
+   <%= f.label :name %><br>
+   <%= f.text_field :name %>  </p>
+
+ <p>
+   <%= f.label :duration %><br>
+   <%= f.text_field :duration %>
+ </p>
+ <p>
+   <%= f.label :teamsize %><br>
+   <%= f.text_field :teamsize %>
+ </p>
+ <p>
+   <%= f.label :cost %><br>
+   <%= f.password_field :cost %>
+ </p>
+  <p>
+   <%= f.label :domain %><br>
+   <%= f.password_field :domain %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>

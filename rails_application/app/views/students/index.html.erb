@@ -11,7 +11,7 @@
 		<td><%= student.firstname %></td> 
 		<td><%= student.lastname %></td> 
 		<td><%= student.email %></td> 
-		<td><%= link_to 'Edit User', student_edit_path(student) %></td> 
+		<td><%= link_to 'View Student', student_show_path(student) %></td> 
 		<td><%= link_to 'Destroy User', student_destroy_path(student), method: :delete, data: {confirm: 'Are you sure?'} %></td> 
 	</tr> 
 <% end %> 
