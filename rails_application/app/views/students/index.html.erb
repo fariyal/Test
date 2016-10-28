@@ -1,0 +1,18 @@
+<h2>Students details</h2> 
+<table border="2px"> 
+	<tr> 
+		<th>Firstname</th> 
+		<th>Lastname</th> 
+		<th>Email</th> 
+	</tr> 
+
+<% @students.each do |student| %><br> 
+	<tr> 
+		<td><%= student.firstname %></td> 
+		<td><%= student.lastname %></td> 
+		<td><%= student.email %></td> 
+		<td><%= link_to 'Edit User', student_edit_path(student) %></td> 
+		<td><%= link_to 'Destroy User', student_destroy_path(student), method: :delete, data: {confirm: 'Are you sure?'} %></td> 
+	</tr> 
+<% end %> 
+</table>
